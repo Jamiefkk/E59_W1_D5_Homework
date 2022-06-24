@@ -16,6 +16,7 @@ def increase_pets_sold(more_pets, sold):
 def get_stock_count(pet_stock):
     return len(pet_stock["pets"])
 
+
 # #issues
 # def get_pets_by_breed(species, breed):
 #     count = []
@@ -30,9 +31,33 @@ def get_stock_count(pet_stock):
 #             return pet_name
 
 # something about this is wierd, we can sue this in our own but not here
-def get_pets_by_breed(pets, breed):
+# def get_pets_by_breed(pets, breed):
+#     count = []
+#     for pet in pets["pets"]["breed"]:
+#         if pet == breed:
+#             count.append(pet["name"])
+#     return count
+
+def get_pets_by_breed(pet_type, breed):
     count = []
-    for pet in pets:
-        if pet == breed:
+    species = (pet_type["pets"])
+    for pet in species:
+        if pet ["breed"] == breed:
             count.append(pet["name"])
+    return count
+
+# def find_pet_by_name(pet_list, pet_name):
+#     count = []
+#     name = (pet_list["pets"])
+#     for pet in name:
+#         if pet ["name"] == pet_name:
+#             count.append(pet["name"])
+#     return count
+
+def find_pet_by_name(pet_list, pet_name):
+    count = []
+    name = (pet_list["pets"])
+    for pet in name:
+        if pet ["name"] == pet_name:
+            count.append(pet)
     return count
