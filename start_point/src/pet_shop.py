@@ -16,20 +16,23 @@ def increase_pets_sold(more_pets, sold):
 def get_stock_count(pet_stock):
     return len(pet_stock["pets"])
 
+# #issues
+# def get_pets_by_breed(species, breed):
+#     count = []
+#     for pet in species:
+#         if pet == breed:
+#             count.append(pet["name"])
+#     return count
+
+# def find_pet_by_name(pet, name):
+#     for pet_name in pet["pets"]["name"]:
+#         if pet_name == name:
+#             return pet_name
+
+# something about this is wierd, we can sue this in our own but not here
 def get_pets_by_breed(pets, breed):
-    count = 0
-    for type in pets:
-        if pets["pets"]["breed"] == breed:
-            count = count + 1
+    count = []
+    for pet in pets:
+        if pet == breed:
+            count.append(pet["name"])
     return count
-
-
-def get_pets_by_breed(pets, breed):
-    count = 0
-    for num_of in pets["pets"]["breed"]:
-        if num_of == breed:
-            count += 1
-    return count
-
-I can't hear anything from slack
-Did you allow slacks to access microphont? or Audio
