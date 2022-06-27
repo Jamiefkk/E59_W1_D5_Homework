@@ -70,11 +70,11 @@ cc_pet_shop = {
 }
 
 
-def get_pet_shop_name(pet_name):
-    return pet_name["name"]
+# def get_pet_shop_name(pet_name):
+#     return pet_name["name"]
 
-name = get_pet_shop_name(cc_pet_shop)
-print(name)
+# name = get_pet_shop_name(cc_pet_shop)
+# print(name)
 
 # def get_pets_by_breed(pet_type, breed):
 #     count = []
@@ -97,20 +97,14 @@ print(name)
 # all_pets = cc_pet_shop["pets"]
 # print(all_pets)
 
-def find_pet_by_name(pet_list, pet_name):
-    count = []
-    name = (pet_list["pets"])
-    for pet in name:
-        if pet ["name"] == pet_name:
-            count.append(pet)
-    return count
-        
+def remove_pet_by_name(pet_list, pet_name):
+    names = (pet_list["pets"])
+    for name in names:
+        if name == pet_name:
+            names.pop(name)
+
+remove_pet_by_name(cc_pet_shop, "Arthur")
+print(cc_pet_shop["pets"])
 
 
-pet_name = find_pet_by_name(cc_pet_shop, "Arthur")
-print(pet_name)
 
-
-test_name = [{'name': 'Arthur', 'pet_type': 'dog', 'breed': 'Husky', 'price': 900}]
-
-print(test_name["name"])

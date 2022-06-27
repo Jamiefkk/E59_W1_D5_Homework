@@ -55,9 +55,44 @@ def get_pets_by_breed(pet_type, breed):
 #     return count
 
 def find_pet_by_name(pet_list, pet_name):
-    count = []
+    count = None
     name = (pet_list["pets"])
     for pet in name:
         if pet ["name"] == pet_name:
-            count.append(pet)
+            count = pet
     return count
+
+def remove_pet_by_name(pet_list, pet_name):
+    names = (pet_list["pets"])
+    for name in names:
+        if name == pet_name:
+            names.pop(name)
+
+def add_pet_to_stock(pet_list, new_pet):
+    names = (pet_list["pets"])
+    names.append(new_pet)
+
+def get_customer_cash(customer_money):
+        return customer_money ["cash"]
+
+def remove_customer_cash(customer, money):
+    customer ["cash"] -= money
+
+def get_customer_pet_count(customer_number):
+    count = 0
+    for pet in customer_number["pets"]:
+        count = count + 1
+    return count
+    
+def add_pet_to_customer(customer, new_pet):
+    customer["pets"].append(new_pet)
+
+def customer_can_afford_pet(customer, new_pet):
+    budget = get_customer_cash(customer)
+    price = new_pet["price"]
+    if price <= budget:
+        return True
+    else:
+        return False
+
+# def sell_pet_to_customer(self.cc_pet_shop, pet, customer):
